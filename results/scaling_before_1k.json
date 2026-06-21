@@ -1,0 +1,221 @@
+{
+  "summary": {
+    "headline": {
+      "version": "before",
+      "documents": 1000,
+      "ko_documents": 522,
+      "en_documents": 478,
+      "max_doc_chars": 1000,
+      "total_chars": 777612,
+      "total_bytes": 1160238,
+      "original_total_chars": 2657113,
+      "original_total_bytes": 3382304,
+      "truncated_documents": 582,
+      "source_counted_tokens": 778800,
+      "repeats": 5,
+      "warmup_runs": 0
+    },
+    "key_metrics": {
+      "encode_elapsed_sec_mean": 242.5389027000405,
+      "encode_tokens_per_sec": 905.718618970083,
+      "encode_cache_hits": 0,
+      "encode_cache_misses": 0,
+      "encode_cache_size": 0,
+      "decode_elapsed_sec_mean": 0.0,
+      "chunk_count_elapsed_sec_mean": 0.0,
+      "chunk_count_unique_chunks": 0,
+      "train_small_elapsed_sec_mean": 0.0,
+      "train_small_final_vocab_size": 0,
+      "train_small_total_merges": 0,
+      "max_peak_rss_mb": 404.265625
+    },
+    "interpretation": [
+      "encode가 baseline의 주요 runtime 병목이다.",
+      "decode는 encode에 비해 매우 작다.",
+      "chunk_count는 tokenizer 학습/재학습 경로의 corpus scan 비용을 대표한다."
+    ]
+  },
+  "config": {
+    "versions": [
+      "before"
+    ],
+    "tasks": [
+      "encode"
+    ],
+    "corpus_dir": "data/public_corpus",
+    "tokenizer_path": "artifacts/tokenizer_150k.json",
+    "max_documents_per_lang": 1000,
+    "ko_documents": 522,
+    "en_documents": 478,
+    "max_doc_chars": 1000,
+    "repeats": 5,
+    "warmup_runs": 0,
+    "n_workers": 1,
+    "chunk_count_documents_per_lang": 500,
+    "train_documents_per_lang": 100,
+    "train_vocab_size": 320,
+    "train_transition_point": 288,
+    "train_stage2_max_docs": 100,
+    "progress_every_docs": 500,
+    "clear_cache_before_run": true,
+    "output_csv": "results/scaling_before_1k.csv",
+    "output_json": "results/scaling_before_1k.json"
+  },
+  "run": {
+    "started_at_utc": "2026-06-20T12:35:51.715566+00:00",
+    "finished_at_utc": "2026-06-20T12:56:05.994110+00:00",
+    "elapsed_sec": 1214.2785626999103
+  },
+  "environment": {
+    "python_version": "3.14.3",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+    "cpu_count": 16
+  },
+  "corpus_sample": {
+    "documents": 1000,
+    "ko_documents": 522,
+    "en_documents": 478,
+    "total_chars": 777612,
+    "total_bytes": 1160238,
+    "original_total_chars": 2657113,
+    "original_total_bytes": 3382304,
+    "truncated_documents": 582,
+    "source_counted_tokens": 778800
+  },
+  "corpus_manifest": {
+    "target_tokens": 1000000000,
+    "actual_counted_tokens": 1000001898,
+    "actual_documents": 1005478,
+    "actual_bytes_utf8": 4297956260,
+    "sources": [
+      {
+        "lang": "ko",
+        "dataset": "HuggingFaceFW/fineweb-2",
+        "config": "kor_Hang",
+        "split": "train",
+        "text_field": "text",
+        "target_ratio": 0.5,
+        "license": "ODC-By 1.0",
+        "terms": "Subject to Common Crawl Terms of Use",
+        "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-2"
+      },
+      {
+        "lang": "en",
+        "dataset": "HuggingFaceFW/fineweb-edu",
+        "config": "sample-10BT",
+        "split": "train",
+        "text_field": "text",
+        "target_ratio": 0.5,
+        "license": "ODC-By 1.0",
+        "terms": "Subject to Common Crawl Terms of Use",
+        "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu"
+      }
+    ]
+  },
+  "versions": {
+    "before": {
+      "version": "before",
+      "tasks": {
+        "encode": {
+          "summary": {
+            "version": "before",
+            "task": "encode",
+            "warmup_runs": 0,
+            "repeats": 5,
+            "documents": 1000,
+            "ko_documents": 522,
+            "en_documents": 478,
+            "total_chars": 777612,
+            "total_bytes": 1160238,
+            "original_total_chars": 2657113,
+            "original_total_bytes": 3382304,
+            "truncated_documents": 582,
+            "source_counted_tokens": 778800,
+            "output_tokens": 219672,
+            "elapsed_sec_mean": 242.5389027000405,
+            "elapsed_sec_std": 41.64451760552838,
+            "elapsed_sec_min": 222.30450400011614,
+            "elapsed_sec_max": 317.0124725999776,
+            "peak_memory_mb_mean": 0.0813791275024414,
+            "peak_memory_mb_max": 0.08599281311035156,
+            "peak_rss_mb_mean": 403.5890625,
+            "peak_rss_mb_max": 404.265625,
+            "docs_per_sec": 4.123049906087635,
+            "tokens_per_sec": 905.718618970083,
+            "unique_chunks": 0,
+            "cache_hits": 0,
+            "cache_misses": 0,
+            "cache_size": 0,
+            "final_vocab_size": 0,
+            "total_merges": 0,
+            "n_workers": 1,
+            "max_doc_chars": 1000,
+            "python_version": "3.14.3",
+            "platform": "Windows-10-10.0.19045-SP0",
+            "cpu_count": 16,
+            "tokenizer_path": "artifacts/tokenizer_150k.json",
+            "notes": "baseline before optimization"
+          },
+          "repeats": [
+            {
+              "elapsed_sec": 317.0124725999776,
+              "peak_memory_mb": 0.08599281311035156,
+              "peak_rss_mb": 404.265625,
+              "metrics": {
+                "output_tokens": 219672,
+                "cache_hits": 0,
+                "cache_misses": 0,
+                "cache_size": 0
+              }
+            },
+            {
+              "elapsed_sec": 224.61106080003083,
+              "peak_memory_mb": 0.08172893524169922,
+              "peak_rss_mb": 403.640625,
+              "metrics": {
+                "output_tokens": 219672,
+                "cache_hits": 0,
+                "cache_misses": 0,
+                "cache_size": 0
+              }
+            },
+            {
+              "elapsed_sec": 224.95597229991108,
+              "peak_memory_mb": 0.07959842681884766,
+              "peak_rss_mb": 403.65625,
+              "metrics": {
+                "output_tokens": 219672,
+                "cache_hits": 0,
+                "cache_misses": 0,
+                "cache_size": 0
+              }
+            },
+            {
+              "elapsed_sec": 222.30450400011614,
+              "peak_memory_mb": 0.07975006103515625,
+              "peak_rss_mb": 403.1875,
+              "metrics": {
+                "output_tokens": 219672,
+                "cache_hits": 0,
+                "cache_misses": 0,
+                "cache_size": 0
+              }
+            },
+            {
+              "elapsed_sec": 223.81050380016677,
+              "peak_memory_mb": 0.07982540130615234,
+              "peak_rss_mb": 403.1953125,
+              "metrics": {
+                "output_tokens": 219672,
+                "cache_hits": 0,
+                "cache_misses": 0,
+                "cache_size": 0
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

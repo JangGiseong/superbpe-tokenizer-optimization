@@ -1,0 +1,9 @@
+datasets
+huggingface_hub
+numpy
+pandas
+matplotlib
+psutil
+pyarrow
+regex
+kiwipiepy

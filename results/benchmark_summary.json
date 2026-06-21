@@ -1,0 +1,123 @@
+{
+  "dataset": {
+    "documents": 50274,
+    "ko_documents": 26232,
+    "en_documents": 24042,
+    "max_doc_chars": 1000,
+    "corpus_fraction": "5% of 1,005,478 public-corpus documents"
+  },
+  "main_result": {
+    "documents": 50274,
+    "encode_speedup_x": 41.329105399962515,
+    "encode_time_reduction_pct": 97.58039766328717,
+    "encode_time_saved_sec": 17652.336774400203,
+    "chunk_count_speedup_x": 1.1929971897497635,
+    "chunk_count_time_reduction_pct": 16.17750581543663
+  },
+  "train_small_auxiliary": {
+    "before_elapsed_sec": 106.6288143999409,
+    "after_elapsed_sec": 97.52731589996256,
+    "speedup_x": 1.0933225570291925,
+    "elapsed_reduction_pct": 8.535683859187108,
+    "before_peak_rss_mb": 5165.22265625,
+    "after_peak_rss_mb": 5021.8125,
+    "rss_reduction_pct": 2.776456423935016,
+    "final_vocab_size": 1024,
+    "total_merges": 768,
+    "interpretation": "Measured as an auxiliary training-path check; improvement was modest because the original trainer already used multiprocessing chunk aggregation."
+  },
+  "kept_result_files": [
+    "results/baseline_before_5pct.csv",
+    "results/baseline_before_5pct.json",
+    "results/after_5pct_iter.csv",
+    "results/after_5pct_iter.json",
+    "results/benchmark_results.csv",
+    "results/benchmark_summary.json",
+    "results/train_before_5pct.csv",
+    "results/train_before_5pct.json",
+    "results/train_after_5pct.csv",
+    "results/train_after_5pct.json",
+    "results/encode_scaling_summary.csv",
+    "results/encode_scaling_summary.json",
+    "results/encode_scaling_details.csv"
+  ],
+  "encode_scaling": {
+    "description": "Additional encode benchmark for repeated measurements and input-size scaling.",
+    "summary_csv": "results/encode_scaling_summary.csv",
+    "details_csv": "results/encode_scaling_details.csv",
+    "sizes": [
+      {
+        "size_label": "1k",
+        "documents": 1000,
+        "before_elapsed_sec_mean": 242.5389027000405,
+        "before_elapsed_sec_std": 41.64451760552838,
+        "after_elapsed_sec_mean": 6.5207656000275165,
+        "after_elapsed_sec_std": 0.4827609678303757,
+        "speedup_x": 37.19485066278368,
+        "before_docs_per_sec": 4.123049906087635,
+        "after_docs_per_sec": 153.35622553213386,
+        "before_tokens_per_sec": 905.718618970083,
+        "after_tokens_per_sec": 33688.06877509491,
+        "before_peak_rss_mb_mean": 403.5890625,
+        "after_peak_rss_mb_mean": 432.1625,
+        "after_cache_hits": 8013,
+        "after_cache_misses": 6295,
+        "after_cache_size": 6295
+      },
+      {
+        "size_label": "2k",
+        "documents": 2000,
+        "before_elapsed_sec_mean": 477.34464226001876,
+        "before_elapsed_sec_std": 77.82668230228708,
+        "after_elapsed_sec_mean": 12.788423060020431,
+        "after_elapsed_sec_std": 0.8910577979644023,
+        "speedup_x": 37.32630989917033,
+        "before_docs_per_sec": 4.1898448687532595,
+        "after_docs_per_sec": 156.39144800053282,
+        "before_tokens_per_sec": 901.6252868416202,
+        "after_tokens_per_sec": 33654.34486957866,
+        "before_peak_rss_mb_mean": 405.83125,
+        "after_peak_rss_mb_mean": 465.58359375,
+        "after_cache_hits": 16623,
+        "after_cache_misses": 11542,
+        "after_cache_size": 11542
+      },
+      {
+        "size_label": "5k",
+        "documents": 5000,
+        "before_elapsed_sec_mean": 1612.2651321000885,
+        "before_elapsed_sec_std": 0.0,
+        "after_elapsed_sec_mean": 36.87080550007522,
+        "after_elapsed_sec_std": 0.0,
+        "speedup_x": 43.72741821701724,
+        "before_docs_per_sec": 3.101226901488063,
+        "after_docs_per_sec": 135.60864570723305,
+        "before_tokens_per_sec": 688.6590659898195,
+        "after_tokens_per_sec": 30113.28298747731,
+        "before_peak_rss_mb_mean": 413.9375,
+        "after_peak_rss_mb_mean": 591.1015625,
+        "after_cache_hits": 44771,
+        "after_cache_misses": 28238,
+        "after_cache_size": 28238
+      },
+      {
+        "size_label": "10k",
+        "documents": 10000,
+        "before_elapsed_sec_mean": 3299.4394487000536,
+        "before_elapsed_sec_std": 0.0,
+        "after_elapsed_sec_mean": 75.7128904000856,
+        "after_elapsed_sec_std": 0.0,
+        "speedup_x": 43.57830524320233,
+        "before_docs_per_sec": 3.030817857239326,
+        "after_docs_per_sec": 132.07790571932378,
+        "before_tokens_per_sec": 686.7269532382867,
+        "after_tokens_per_sec": 29926.396786952388,
+        "before_peak_rss_mb_mean": 421.8046875,
+        "after_peak_rss_mb_mean": 812.05859375,
+        "after_cache_hits": 93789,
+        "after_cache_misses": 55711,
+        "after_cache_size": 55711
+      }
+    ]
+  }
+}
